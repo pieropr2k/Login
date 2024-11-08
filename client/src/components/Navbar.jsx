@@ -7,7 +7,7 @@ export function Navbar() {
   const { isAuthenticated, logout, user, role } = useAuth();
 
   return (
-    <nav className="bg-zinc-700 my-3 flex justify-between py-5 px-10 rounded-lg">
+    <nav className="bg-[#080537] flex justify-between py-5 px-10">
       <h1 className="text-2xl font-bold">
         <Link to={isAuthenticated ? "/forall" : "/"}>NexoChain</Link>
       </h1>

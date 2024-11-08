@@ -13,7 +13,7 @@ function App() {
   return (
     <AuthProvider>
         <BrowserRouter>
-          <main className="container content-container mx-auto px-10 md:px-0">
+          <main className="container mx-auto px-10 md:px-0 bg-indigo-950">
             <Navbar />
             <Routes>
               <Route path="/" element={<HomePage />} />

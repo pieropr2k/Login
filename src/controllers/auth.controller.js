@@ -30,8 +30,7 @@ export const register = async (req, res) => {
 
 export const login = async (req, res) => {
     const { email, password } = req.body;
-    console.log(email, password, "login");
-
+    //console.log(email, password, "login");
     try {
         const userFound = await findUserByEmail(email);
         if (!userFound) return res.status(400).json({ message: "The email does not exist" });
@@ -41,15 +40,12 @@ export const login = async (req, res) => {
 
         const token = await createAccessToken({ id: userFound.id });
         //console.log(token, "token");
-
         res.cookie("token", token, {
             httpOnly: process.env.NODE_ENV !== "development",
             secure: true,
             sameSite: "none",
         });
-
         //console.log(token)
-
         res.json({ id: userFound.id, username: userFound.username, email: userFound.email, role_id: userFound.role_id, token });
     } catch (err) {
         return res.status(500).json({ message: err.message });

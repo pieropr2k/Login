@@ -26,12 +26,12 @@ function Register() {
   }, [isAuthenticated]);
 
   return (
-    <div className="h-[calc(100vh-100px)] flex items-center justify-center">
+    <div className="mt-5 flex items-center justify-center">
       <Card>
         {registerErrors.map((error, i) => (
           <Message message={error} key={i} />
         ))}
-        <h1 className="text-3xl font-bold">Registrar</h1>
+        <h1 className="text-3xl font-bold mb-6">Registrar</h1>
         <form onSubmit={handleSubmit(onSubmit)}>
           <Label htmlFor="username">Apellidos Completos:</Label>
           <Input
@@ -121,12 +121,12 @@ function Register() {
             )}
           </div>
 
-          <Button>Registrar</Button>
+          <Button className={"mt-1.5 mb-2.5"}>Registrar</Button>
         </form>
         <p>
           Tienes una cuenta?
-          <Link className="text-sky-500" to="/login">
-            Login
+          <Link className="ml-1 text-sky-500" to="/login">
+            Logeate
           </Link>
         </p>
       </Card>
